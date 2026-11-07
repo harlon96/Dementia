@@ -1,4 +1,4 @@
-# This Python code is used in jupyter noterbook. Place each line of code in a seperate cell.
+# This Python code is used in jupyter notebook. Place each line of code in a separate cell.
 
 #This code is for importing libraries that make this project possible
 import numpy as np

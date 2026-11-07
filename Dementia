@@ -1,0 +1,52 @@
+# This Python code is used in jupyter noterbook. Place each line of code in a seperate cell.
+
+#This code is for importing libraries that make this project possible
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+#This code is to retreive a jpg file from my chromebook
+from IPython import display
+display.Image("/home/harlohutch77/pictures/dementia2.jpg", height=300, width=800)
+
+#This code is to obtain a csv file
+dm = pd.read_csv("/home/harlohutch77/python/python_master/dementia_patients_health_data.csv")
+
+#This code is to show the data in a pandas dataframe
+dm.info()
+
+#This code shows the head or top part of the dataset and fills in a 0 for n/a spots
+dm.head().fillna(0)
+
+#Drop all NAN or use fillna(0)
+dm.dropna()
+
+#Reducing the variables to receive a better perspective of the dataset
+dm[["Diabetic","Physical_Activity","Nutrition_Diet","HeartRate","Weight","Dementia","Age","Smoking_Status","Depression_Status","Cognitive_Test_Scores","Gender"]]
+
+#This is my pick of variables to give you a better perspective of the dataset
+dm[["Gender","HeartRate","Dementia","Age","Cognitive_Test_Scores"]]
+
+
+#Pie chart of the dataset between male vs female
+Slide Type
+
+import plotly.graph_objects as go
+labels = ['Male_D','Female_D']
+values = [241,244]
+fig = go.Figure(data=[go.Pie(labels=labels, values=values,  textinfo='label+percent',
+                            insidetextorientation='radial')])
+fig.show()
+
+
+# Pie Chart showing Male Cognitive Test Score % and Female Cognitive Test Score %
+# for the 1000 patients in this case study
+import plotly.graph_objects as go
+labels = ['Male_CT','Female_CT']
+values = [6.36,6.40]
+fig = go.Figure(data=[go.Pie(labels=labels, values=values,  textinfo='label+percent',
+                            insidetextorientation='radial')])
+fig.show()
+
+
